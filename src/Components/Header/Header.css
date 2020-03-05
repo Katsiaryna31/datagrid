@@ -1,0 +1,15 @@
+.header {
+    background-color: aliceblue;
+    display: flex;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #9c27b0;
+}
+
+.header-name {
+    text-transform: uppercase;
+}

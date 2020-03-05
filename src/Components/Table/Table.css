@@ -1,0 +1,12 @@
+table, th, td {
+    color: #ffffff;
+    border: 2px solid white;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+thead tr th{
+    font-size: 20px;
+    color:#9c27b0;
+    padding: 3px;
+}
