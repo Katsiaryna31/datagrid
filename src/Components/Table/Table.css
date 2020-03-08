@@ -2,11 +2,47 @@ table, th, td {
     color: #ffffff;
     border: 2px solid white;
     border-collapse: collapse;
-    margin: 20px auto;
+    margin: 0 auto;
+    width: auto;
 }
 
 thead tr th{
     font-size: 20px;
     color:#9c27b0;
     padding: 3px;
+}
+
+.search-area {
+    margin: 0;
+    padding: 0;
+}
+
+.search-textarea {
+    background: transparent;
+    border: none;
+    width: 80%;
+    height: 100%;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0;
+    padding: 0 30px 0 5px;
+}
+
+.search-td {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+}
+
+.search-td::after {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    right: 0;
+    background-image: url(../../Assets/Search.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
 }
