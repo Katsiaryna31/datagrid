@@ -9,7 +9,62 @@ table, th, td {
 thead tr th{
     font-size: 20px;
     color:#9c27b0;
-    padding: 3px;
+    padding: 20px 3px;
+}
+
+.cell {
+    position: relative;
+    padding-right: 20px;
+}
+
+.buttons {
+    position: absolute;
+    top: 15px;
+    right: 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-top,
+.button-bottom {
+    border: none;
+    background: transparent;
+    position: relative;
+    outline: none;
+}
+
+.button-top::before {
+    content: '';
+    background-image: url('../../Assets/Triangle.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px 10px;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+.button-bottom::before {
+    content: '';
+    background-image: url('../../Assets/Triangle.svg');
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    background-position: center;
+    position: absolute;
+    top: 25px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    transform: rotate(180deg);
+}
+
+.button-active::before {
+    background-image: url('../../Assets/TriangleActive.svg');
 }
 
 .search-area {
@@ -20,12 +75,12 @@ thead tr th{
 .search-textarea {
     background: transparent;
     border: none;
-    width: 80%;
+    width: 100%;
     height: 100%;
     color: #ffffff;
     font-size: 20px;
     margin: 0;
-    padding: 0 30px 0 5px;
+    padding: 0;
 }
 
 .search-td {
@@ -45,6 +100,29 @@ thead tr th{
     background-image: url(../../Assets/Search.svg);
     background-repeat: no-repeat;
     background-size: 20px 20px;
+}
+
+.search-boolean {
+    width: 100%;
+    border: none !important;
+    background: #282c34 !important;
+}
+
+.search-item {
+    width: 100%;
+    padding: 0 20px !important;
+    background: #282c34 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+.Mui-selected {
+    background: #9c27b0 !important;
+}
+
+.makeStyles-toggleContainer-1 {
+    margin: 0 !important;
+    width: 100%;
 }
 
 .contacts-col {

@@ -6,11 +6,12 @@ import data from './Config';
 
 const App = () => {
   let [tableDataList, setTableDataList] = useState(data);
+  let [conditions, setConditions] = useState('All');
   return (
     <div className="App">
       <Header/>
       <main>
-        <Table tableDataList={tableDataList} setTableDataList={setTableDataList}/>
+        <Table tableDataList={tableDataList} setTableDataList={setTableDataList} conditions={conditions} setConditions={setConditions}/>
       </main>
     </div>
   );
