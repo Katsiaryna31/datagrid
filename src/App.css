@@ -44,3 +44,27 @@ main {
     transform: rotate(360deg);
   }
 }
+
+.mainSearch {
+  background-color: #282c34;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border: 2px solid white;
+  position: relative;
+}
+
+.mainSearch::after {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    right: 30px;
+    background-image: url(./Assets/Search.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}

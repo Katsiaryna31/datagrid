@@ -2,6 +2,7 @@ import React from 'react';
 import data from '../../Config';
 import { Multiselect } from 'multiselect-react-dropdown';
 import startSearch from './StartSearch';
+import searchNumber from './SearchNumber';
 import selectSearch from './SelectSearch';
 import removeSearch from './SelectRemove';
 import ToggleButtons from './ToggleButtons';
@@ -22,21 +23,15 @@ const objectCountries = [
     { key: "Iran" }
 ];
 
-const SearchArea = ({ tableDataList, setTableDataList, conditions, setConditions }) => {
+const SearchArea = ({ tableDataList, setTableDataList, conditions, setConditions, ageSelectCounter, setAgeSelectCounter, countrySelectCounter, setCountrySelectCounter }) => {
     return (
         <tr className="search-area" onInput={(e) => {
-            if (valueInput.length > e.target.value.length) {
-                console.log('delete');
-                valueInput = e.target.value;
-                console.log(valueInput);
-                console.log(data);
-                setTableDataList(data);
-                console.log(tableDataList);
-            }
-
-            console.log('change');
             valueInput = e.target.value;
-            startSearch(valueInput, tableDataList, setTableDataList, e)
+            if (typeof valueInput !== "number") {
+                startSearch(valueInput, tableDataList, setTableDataList, e)
+            } else {
+                searchNumber(valueInput, tableDataList, setTableDataList)
+            } 
         }
         }>
             <td className="search-td"><input type="text" className="search-textarea" id="firstName"></input></td>
@@ -44,10 +39,9 @@ const SearchArea = ({ tableDataList, setTableDataList, conditions, setConditions
             <td className="search-td">
                 <Multiselect
                     options={objectAges}
-                    onSelect={(e) => selectSearch(e, tableDataList, setTableDataList)}
-                    onRemove={(e) => removeSearch(e, setTableDataList)}
+                    onSelect={(e) => selectSearch(e, tableDataList, setTableDataList, ageSelectCounter, setAgeSelectCounter, countrySelectCounter, setCountrySelectCounter)}
+                    onRemove={(e) => removeSearch(e, setTableDataList, ageSelectCounter, setAgeSelectCounter, countrySelectCounter, setCountrySelectCounter)}
                     displayValue="key"
-
                     className="search-textarea"
                     id="ageCategory"
                     placeholder="Select age category"
@@ -56,12 +50,10 @@ const SearchArea = ({ tableDataList, setTableDataList, conditions, setConditions
             <td className="search-td"><input type="text" className="search-textarea" id="originCountry"></input></td>
             <td className="search-td">
                 <Multiselect
-                    options={objectCountries}// Options to display in the dropdown
-                    //selectedValues={objectCountries} // Preselected value to persist in dropdown
-                    onSelect={(e) => selectSearch(e, tableDataList, setTableDataList)}// Function will trigger on select event
-                    //onRemove={this.onRemove} // Function will trigger on remove event
-                    displayValue="key" // Property name to display in the dropdown options
-
+                    options={objectCountries}
+                    onSelect={(e) => selectSearch(e, tableDataList, setTableDataList, ageSelectCounter, setAgeSelectCounter, countrySelectCounter, setCountrySelectCounter)}
+                    onRemove={(e) => removeSearch(e, setTableDataList, ageSelectCounter, setAgeSelectCounter, countrySelectCounter, setCountrySelectCounter)}
+                    displayValue="key" 
                     className="search-textarea"
                     id="visitedCountry"
                     placeholder="Select visited countries"

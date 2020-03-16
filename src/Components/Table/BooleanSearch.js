@@ -4,7 +4,9 @@ const booleanSearch = (value, tableDataList, setTableDataList) => {
     const newData = [];
     let newValue;
     if (value === 'All') {
-        setTableDataList(data); 
+        data.forEach((person) => {
+            newData.push(person);
+        })
     } else if (value === 'true') {
         newValue = true;
     } else if (value === 'false') {
@@ -12,7 +14,6 @@ const booleanSearch = (value, tableDataList, setTableDataList) => {
     }
     tableDataList.forEach((person) => {
         if (person.positiveCoronavirus === newValue)  {
-            console.log(person);
             newData.push(person);
         }
     })
