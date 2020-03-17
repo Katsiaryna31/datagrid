@@ -1,5 +1,3 @@
-import data from '../../Config';
-
 const selectSearch = (e, tableDataList, setTableDataList) => {
     const newData = [];
     tableDataList.forEach((person) => {
