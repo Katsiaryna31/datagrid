@@ -7,8 +7,6 @@ import data from './Config';
 const App = () => {
   let [tableDataList, setTableDataList] = useState(data);
   let [conditions, setConditions] = useState('All');
-  let [ageSelectCounter, setAgeSelectCounter] = useState(0);
-  let [countrySelectCounter, setCountrySelectCounter] = useState(0);
   return (
     <div className="App">
       <Header />
@@ -26,7 +24,7 @@ const App = () => {
           setTableDataList(newData);
         }
         }></input>
-        <Table tableDataList={tableDataList} setTableDataList={setTableDataList} conditions={conditions} setConditions={setConditions} ageSelectCounter={ageSelectCounter} setAgeSelectCounter={setAgeSelectCounter} countrySelectCounter={countrySelectCounter} setCountrySelectCounter={setCountrySelectCounter}/>
+        <Table tableDataList={tableDataList} setTableDataList={setTableDataList} conditions={conditions} setConditions={setConditions}/>
       </main>
     </div>
   );
