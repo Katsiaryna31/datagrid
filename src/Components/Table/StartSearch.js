@@ -1,8 +1,6 @@
 import data from '../../Config';
 
 const startSearch = (value, tableDataList, setTableDataList, e) => {
-    console.log(typeof tableDataList[0][e.target.id]);
-    console.log(e.target.id);
     const newData = [];
     if (e.target.id === 'contactsPeople') {
         const newValue = Number(value)
